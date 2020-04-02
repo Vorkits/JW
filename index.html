@@ -1,0 +1,347 @@
+<html style="margin:0;padding:0;" id="hh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Just Wallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Baloo+Thambi+2:wght@700&family=Poppins&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+</head>
+<style>
+    @font-face {
+        font-family: "My Custom Font";
+        src: url(./14074.ttf) format("truetype");
+    }
+    
+    @font-face {
+        font-family: "gm";
+        src: url(./gm.ttf) format("truetype");
+    }
+    
+    .header {
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .main {
+        width: 100%;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        z-index: 1;
+        border: 0;
+    }
+    
+    html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    
+    .valuta {
+        font-family: Sen;
+        color: grey;
+        position: relative;
+        font-weight: 400;
+        font-size: 14;
+        display: inline-block;
+    }
+    
+    .valutes {
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+    }
+    
+    .arrow {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        bottom: 0px;
+        display: inline-block;
+    }
+    
+    .cost {
+        color: cornflowerblue;
+        display: inline-block;
+    }
+    
+    .shop {
+        background: #7867a7;
+        color: white;
+        border: 0;
+        font-family: "gm";
+        border-radius: 3px;
+        position: relative;
+        font-weight: 300;
+        font-size: 16px;
+        margin-left: 20px;
+        max-width: 100px;
+        max-height: 25px;
+        text-align: center;
+        padding: 0px 5px 10px 5px;
+    }
+    
+    .clock {
+        position: relative;
+        font-family: "My Custom Font";
+        font-size: 38;
+        top: -20px;
+        margin-left: 40px;
+        color: #7867a7;
+    }
+    
+    .drag {
+        position: relative;
+        height: 20px;
+        width: 99%;
+        background: #f1f1f1;
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        z-index: 3;
+    }
+    
+    .drag-button {
+        position: relative;
+        -webkit-app-region: no-drag;
+        background: #f1f1f1;
+        height: 20px;
+        border: 0;
+        z-index: 3;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .button-img {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        margin-left: 1px;
+        top: 0;
+    }
+    
+    .button-svg {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        border: 2px rgb(187, 187, 187) solid;
+        border-radius: 1px;
+        box-sizing: border-box;
+        top: 0;
+    }
+    
+    .buttons {
+        background: #f1f1f1;
+        width: 110px;
+        left: 100%;
+        display: flex;
+        position: relative;
+        transform: translateX(-100px);
+        max-height: 20px;
+    }
+    
+    .line {
+        width: 100%;
+        position: absolute;
+        height: 6px;
+        top: 100%;
+        background: rgb(187, 187, 187);
+    }
+    
+    button:focus {
+        outline: none;
+    }
+    
+    html,
+    body {
+        background-color: transparent;
+    }
+</style>
+
+<body style="margin:5px;">
+    <div class="app" style="background:white;box-shadow:0px 0px 6px grey;" id="app">
+
+        <div class="drag">
+            <div class="buttons">
+                <button class="drag-button"><img id="line" class="button-img " src="line.png " alt=" " style="top: 3px; height:10px;"></button>
+                <button class="drag-button" style="top:0px"><div  class="button-svg " id="kvadrat"></div></button>
+                <button class="drag-button"><img class="button-img " src="cross.png " id="krest" alt=" "></button>
+
+            </div>
+        </div>
+
+        <div class="valutes" style="margin-top:20px;display: flex;justify-content: space-around;">
+
+            <div class="valuta "><img src="up.png " class="arrow " id="img1" alt=" "> Bitcoin:
+                <div class="cost" id="cost1">...$</div>
+            </div>
+            <div class="valuta "><img src="up.png " class="arrow " id="img2" alt=" "> Etherium:
+                <div class="cost" id="cost2">...$</div>
+            </div>
+            <div class="valuta "><img src="up.png " class="arrow " id="img3" alt=" "> Litecoin:
+                <div class="cost" id="cost3">...$</div>
+            </div>
+            <div class="valuta "><img src="up.png " class="arrow " id="img4" alt=" "> Zcash:
+                <div class="cost" id="cost4">...$</div>
+            </div>
+            <div class="valuta "><img src="up.png " class="arrow " id="img5" alt=" "> Bitcoin Cash:
+                <div class="cost" id="cost5">...$</div>
+            </div>
+            <div class="valuta "><img src="up.png" class="arrow " id="img6" alt=" "> Monero:
+                <div class="cost " id="cost6">...$</div>
+            </div>
+
+            <div class="shop ">Магазины</div>
+
+            <div class="clock " id="clock"></div>
+
+        </div>
+
+
+
+
+        <iframe scrolling="no" id="frame" class="main" src="http://justwallet.ru/ "></iframe>
+        <div class="line"></div>
+    </div>
+
+
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script>
+        costs = 6
+        const {
+            remote
+        } = require('electron');
+
+        var win = remote.getCurrentWindow();
+
+        var max = {
+            max: false
+        }
+        var frame = document.getElementById('frame')
+        frame.style.height = win.getSize()[1] - 107
+
+        //$('#frame').css("height", "")
+
+        $('#line').click(function() {
+            win.minimize()
+        })
+        $('.drag-button').hover(
+            function() {
+                $(this).css('background', '#c0c0c0')
+            },
+            function() {
+                $(this).css('background', '#f1f1f1')
+            }
+        )
+
+        $('#kvadrat').click(function() {
+
+            if (max.max) {
+                document.getElementById('hh').style.backgroundColor = 'transparent';
+                win.unmaximize();
+                frame.style.height = win.getSize()[1] - 107
+                max.max = false
+            } else {
+                document.getElementById('hh').style.backgroundColor = 'white';
+                win.maximize()
+                frame.style.height = win.getSize()[1] - 107
+                max.max = true
+            }
+        })
+
+
+        $('#krest').click(function() {
+            win.close()
+
+        })
+        const axios = require('axios');
+        var now = new Date();
+
+
+        function clock() {
+
+            var now = new Date();
+            h = now.getUTCHours() + 3
+
+            m = now.getMinutes();
+            var c = document.getElementById('clock')
+            if (h >= 24)
+
+                h = h - 24
+
+            if (m < 10)
+                m = '0' + String(m)
+            else
+                m = String(m)
+
+            h = String(h)
+            c.innerHTML = h + ':' + m
+        }
+        clock()
+        setInterval(clock, 60000)
+
+        function price() {
+            url = 'https://min-api.cryptocompare.com/data/pricemultifull?fsyms='
+            var valutes = ['BTC', 'ETH', 'LTC', 'ZEC', 'BCH', 'XMR']
+            for (var i = 0; i < 6; i++) {
+                url += valutes[i] + ','
+            }
+            url += '&tsyms=USD&api_key=1bdcfc147c2a02f2a597d3f01dde0d783d04b9b041a5aadfe2cdf18419dba0ef'
+            ar = axios.get(url)
+                .then(function(response) {
+
+
+                    for (var i = 1; i <= 6; i++) {
+                        $('#cost' + i).fadeOut(1)
+                        $('#cost' + i).html(response.data.RAW[valutes[i - 1]].USD.PRICE + '$')
+                        $('#cost' + i).fadeIn(1300);
+                        $('#img' + i).fadeOut(1)
+                        var img = document.getElementById('img' + i)
+                        if (response.data.RAW[valutes[i - 1]].USD.CHANGEHOUR >= 0) {
+                            img.src = 'up.png'
+                        } else {
+                            img.src = 'down.png'
+                        }
+                        $('#img' + i).fadeIn(1300)
+                    }
+
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+
+        function changePrice() {
+
+            price()
+        }
+        changePrice()
+
+        setInterval(changePrice, 300000)
+
+        $('#tomain').click(function() {
+                dd = document.getElementById('frame');
+                dd.src = "http://justwallet.ru/ "
+            }) &
+            $('.butimg').hover(function() {
+                $(this).css('background', 'red')
+
+            }, function() {
+                $(this).css('background', 'grey')
+
+            })
+
+
+        //bitcoin.innerHTML = price('BTC')['PRICE']
+        //price('BTC')
+    </script>
+
+</body>
+
+</html>
