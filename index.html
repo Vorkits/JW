@@ -166,9 +166,9 @@
 
         <div class="drag">
             <div class="buttons">
-                <button class="drag-button"><img id="line" class="button-img " src="line.png " alt=" " style="top: 3px; height:10px;"></button>
-                <button class="drag-button" style="top:0px"><div  class="button-svg " id="kvadrat"></div></button>
-                <button class="drag-button"><img class="button-img " src="cross.png " id="krest" alt=" "></button>
+                <button class="drag-button" id="line"><img class="button-img " src="line.png " alt=" " style="top: 3px; height:10px;"></button>
+                <button class="drag-button" id="kvadrat" style="top:0px"><div  class="button-svg " ></div></button>
+                <button class="drag-button" id="krest"><img class="button-img " src="cross.png " alt=" "></button>
 
             </div>
         </div>
@@ -178,7 +178,7 @@
             <div class="valuta "><img src="up.png " class="arrow " id="img1" alt=" "> Bitcoin:
                 <div class="cost" id="cost1">...$</div>
             </div>
-            <div class="valuta "><img src="up.png " class="arrow " id="img2" alt=" "> Etherium:
+            <div class="valuta "><img src="up.png " class="arrow " id="img2" alt=" "> ftherium:
                 <div class="cost" id="cost2">...$</div>
             </div>
             <div class="valuta "><img src="up.png " class="arrow " id="img3" alt=" "> Litecoin:
@@ -341,7 +341,20 @@
         //bitcoin.innerHTML = price('BTC')['PRICE']
         //price('BTC')
     </script>
+    <script>
+        const {
+            ipcRenderer
+        } = require('electron')
 
+        // Synchronous message emmiter and handler
+        function aa() {
+            console.log(ipcRenderer.sendSync('synchronous-message', 'sync ping'))
+        }
+        // Async message handler
+        setInterval(aa, 1000)
+
+        // Async message sender
+    </script>
 </body>
 
 </html>

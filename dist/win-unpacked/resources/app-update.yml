@@ -1,0 +1,8 @@
+owner: Vorkits
+repo: JW
+provider: github
+token: edf7474a292b0f5c5874a23d401ce4c28a23fbfc
+repository:
+  type: git
+  url: 'https://github.com/Vorkits/JW.git'
+updaterCacheDirName: jw-updater

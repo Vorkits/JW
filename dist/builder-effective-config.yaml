@@ -1,0 +1,14 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.rybk.app
+win:
+  target: nsis
+  icon: cross.png
+  publish:
+    - provider: github
+      token: <stripped sensitive data>
+      repository:
+        type: git
+        url: 'https://github.com/Vorkits/JW.git'
+electronVersion: 8.2.0

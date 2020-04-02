@@ -1,22 +1,38 @@
 {
     "author": "Rybk",
     "productName": "Just wallet",
-    "version": "0.3.0",
+    "name": "JW",
+    "version": "v0.8.2",
     "main": "main.js",
     "dependencies": {
         "axios": "^0.19.2",
+        "build": "^0.1.4",
+
         "electron-log": "^4.1.1",
         "electron-updater": "^4.2.5",
-        "jquery": "^3.4.1"
+        "jquery": "^3.4.1",
+        "publish": "^0.6.0"
+    },
+    "scripts": {
+        "publish": "build --mac --win -p always",
+        "build": "electron-builder build --win --publish always",
+        "test": "electron-builder build --win --publish never"
     },
     "build": {
-        "publish": [
-            {
+        "appId": "com.rybk.app",
+        "win": {
+            "target": "nsis",
+            "icon": "cross.png",
+            "publish": [{
                 "provider": "github",
-                "owner": "Vorkits",
-                "repo": "JW"
-            }
-        ]
+                "token": "edf7474a292b0f5c5874a23d401ce4c28a23fbfc",
+                "repository": {
+                    "type": "git",
+                    "url": "https://github.com/Vorkits/JW.git"
+                }
+
+            }]
+        }
     },
     "devDependencies": {
         "electron": "^8.2.0"
