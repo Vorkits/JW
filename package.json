@@ -8,7 +8,7 @@
         "axios": "^0.19.2",
         "build": "^0.1.4",
         "builder": "^5.0.0",
-
+        "electron-builder-squirrel-windows": "^22.5.1",
         "electron-log": "^4.1.1",
         "electron-updater": "^4.2.5",
         "jquery": "^3.4.1",
@@ -23,17 +23,21 @@
         "appId": "com.rybk.app",
         "win": {
             "target": "nsis",
+
             "icon": "icon.png",
             "publish": [{
-                "provider": "github",
-                "token": "9bfe85e4f78cddf567d704ec910148c88830248b",
-                "repository": {
-
-                    "type": "git",
-                    "url": "https://github.com/Vorkits/JW.git"
-                }
+                "provider": "bintray",
+                "package": "Alex",
+                "repo": "JW",
+                "owner": "vorkit",
+                "user": "reazer381",
+                "token": "75408d59f88df364c7b4dca5dbc77bccf2ceae7a"
             }]
+        },
+        "nsis": {
+            "oneClick": false
         }
+
     },
     "devDependencies": {
         "electron": "^8.2.0",
