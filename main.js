@@ -1,6 +1,6 @@
 const electron = require('electron')
-
-// Module to control application life.
+    //9bfe85e4f78cddf567d704ec910148c88830248b
+    // Module to control application life.
 const app = electron.app
     // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
@@ -17,12 +17,18 @@ function sendStatusToWindow(text) {
     log.info(text);
     mainWindow.webContents.send('message', text);
 }
-autoUpdater.logger = log;
-autoUpdater.logger.transports.file.level = 'info';
-log.info('App starting...');
 
 function createWindow() {
     // Create the browser window.
+    // "publish": [{
+    //     "provider": "github",
+    //     "token": "9bfe85e4f78cddf567d704ec910148c88830248b",
+    //     "repository": {
+
+    //         "type": "git",
+    //         "url": "https://github.com/Vorkits/JW.git"
+    //     }
+    // }]
     mainWindow = new BrowserWindow({
             width: 1215,
             height: 655,
@@ -68,13 +74,7 @@ autoUpdater.on('error', (err) => {
     sendStatusToWindow('Error in auto-updater. ' + err);
     a.text = err
 })
-autoUpdater.on('download-progress', (progressObj) => {
 
-    let log_message = "Download speed: " + progressObj.bytesPerSecond;
-    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-    a.text = log_message;
-})
 autoUpdater.on('update-downloaded', (info) => {
     a.text = 'sucess'
     autoUpdater.quitAndInstall()

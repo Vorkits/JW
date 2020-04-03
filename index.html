@@ -54,6 +54,7 @@
         display: flex;
         justify-content: space-around;
         position: relative;
+        align-items: center;
     }
     
     .arrow {
@@ -88,9 +89,7 @@
     .clock {
         position: relative;
         font-family: "My Custom Font";
-        font-size: 38;
-        top: -20px;
-        margin-left: 40px;
+        font-size: 30;
         color: #7867a7;
     }
     
@@ -159,6 +158,11 @@
     body {
         background-color: transparent;
     }
+    
+    .logo {
+        width: 66px;
+        height: 30px;
+    }
 </style>
 
 <body style="margin:5px;">
@@ -173,7 +177,7 @@
             </div>
         </div>
 
-        <div class="valutes" style="margin-top:20px;display: flex;justify-content: space-around;">
+        <div class="valutes" style="margin-top:5px;display: flex;justify-content: space-around;">
 
             <div class="valuta "><img src="up.png " class="arrow " id="img1" alt=" "> Eitcoin:
                 <div class="cost" id="cost1">...$</div>
@@ -195,7 +199,7 @@
             </div>
 
             <div class="shop ">Магазины</div>
-
+            <img src="logo.png" alt="" class="logo">
             <div class="clock " id="clock"></div>
 
         </div>
@@ -223,7 +227,7 @@
             max: false
         }
         var frame = document.getElementById('frame')
-        frame.style.height = win.getSize()[1] - 107
+        frame.style.height = win.getSize()[1] - 80
 
         //$('#frame').css("height", "")
 
@@ -244,12 +248,12 @@
             if (max.max) {
                 document.getElementById('hh').style.backgroundColor = 'transparent';
                 win.unmaximize();
-                frame.style.height = win.getSize()[1] - 107
+                frame.style.height = win.getSize()[1] - 80
                 max.max = false
             } else {
                 document.getElementById('hh').style.backgroundColor = 'white';
                 win.maximize()
-                frame.style.height = win.getSize()[1] - 107
+                frame.style.height = win.getSize()[1] - 80
                 max.max = true
             }
         })
