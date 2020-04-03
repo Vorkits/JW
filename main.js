@@ -24,15 +24,16 @@ log.info('App starting...');
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 1215,
-        height: 655,
-        minWidth: 1210,
-        frame: false,
-        transparent: true,
-        webPreferences: {
-            nodeIntegration: true
-        }
-    })
+            width: 1215,
+            height: 655,
+            minWidth: 1210,
+            frame: false,
+            transparent: true,
+            webPreferences: {
+                nodeIntegration: true
+            }
+        })
+        //dsa
 
     // and load the index.html of the app.
     app.allowRendererProcessReuse = true
