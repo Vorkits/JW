@@ -2,7 +2,7 @@
     "author": "Rybk",
     "productName": "Just wallet",
     "name": "JW",
-    "version": "v0.8.2",
+    "version": "v1.0.0",
     "main": "main.js",
     "dependencies": {
         "axios": "^0.19.2",
