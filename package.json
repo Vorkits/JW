@@ -5,7 +5,7 @@
     "version": "v1.1.0",
     "main": "main.js",
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "build": "^0.1.4",
         "builder": "^5.0.0",
         "electron-builder-squirrel-windows": "^22.5.1",
